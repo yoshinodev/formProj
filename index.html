@@ -8,7 +8,7 @@
     <title>Formulario</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
 
 </head>
 
@@ -19,21 +19,21 @@
     </div>
     -->
 
-    
+
 
     <div class="container">
         <!-- left menu -->
         <div class="identification">
 
             <div ID="logo">
-                <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+                <img class="iconL1" src="./images/table-tennis-paddle-ball.svg">
             </div>
 
             <div>
                 <h2 id="torne">TORNEIO DA PRIMAVERA</h2>
                 <p id="award">Prémios até ao 10º lugar</p>
 
-                <div class="tornePriButtons">
+                <div class="leftButtons">
                     <div id="BtnRegulation" class="buttomStyle-1">
                         <button type="button">Regulamento</button>
                     </div>
@@ -56,68 +56,66 @@
             <div id="registration">
                 <div id="title">
                     <div id="pen">
-                        <i class="fa-solid fa-pencil"></i> 
+                        <img class="iconR1" src="./images/pen.svg">
                     </div>
                     <h2>INSCREVA-SE AQUI</h2>
-
-                    <div id="regName">
-                        <label for="name">Nome completo<span class="asterisk">*</span></label>
-                        <input type="text" id="name" name="name" required>   <!-- adicionar aos outros inputs -->
-                    </div>
-
-                    <div id="regEmail">
-                        <label for="email">Email<span class="asterisk">*</span></label>
-                        <input type="text">
-
-                    </div>
-
-                    <div id="regPhone">
-                        <label for="phone">Telefone</label>
-                        <input type="text">
-                    </div>
-
-                    <div id="regBornDate">
-                        <label for="phone">Data de nascimento</label>
-                        <input type="text">
-                    </div>
-
-                    <div id="regPassNew">
-                        <label for="newPassword">Senha<span class="asterisk">*</span></label>
-                        <input type="text">
-                    </div>
-
-                    <div id="regPassConfirmation">
-                        <label for="passwordConfirmation">Senha de novo<span class="asterisk">*</span></label>
-                        <input type="text">
-                    </div>
-
-                    <div id="regLevel">
-                        <label for="level">Nível<span class="asterisk">*</span></label>
-                        <input type="text">
-                    </div>
-
-                    <div id="regPolicy">
-                        <input type="checkbox" name="opcoes" value="agree" /> Li e concordo com a
-                        <a href="#" id="agreeStyle">Politica de privacidade</a>
-                    </div>
-
-                    <div class="tornePriButtons">
-
-                        <div id="submit">
-                            <button type="button">Submeter</button> <!-- review later type = submit-->
-                        </div>
-
-                        <div id="clean">
-                            <button type="button">Apagar</button> <!-- review later type = reset-->
-
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-        </form>
+                <div id="regName" class="formItems">
+                    <label for="name">Nome completo<span class="asterisk">*</span></label>
+                    <input type="text" id="name" name="name" required> <!-- adicionar aos outros inputs -->
+                </div>
 
-     <!-- Fim do Menu Direito-->
+                <div id="regEmail" class="formItems">
+                    <label for="email">Email<span class="asterisk">*</span></label>
+                    <input type="text">
+
+                </div>
+
+                <div id="regPhone" class="formItems">
+                    <label for="phone">Telefone</label>
+                    <input type="text">
+                </div>
+
+                <div id="regBornDate" class="formItems">
+                    <label for="phone">Data de nascimento</label>
+                    <input type="text">
+                </div>
+
+                <div id="regPassNew" class="formItems">
+                    <label for="newPassword">Senha<span class="asterisk">*</span></label>
+                    <input type="text">
+                </div>
+
+                <div id="regPassConfirmation" class="formItems">
+                    <label for="passwordConfirmation">Senha de novo<span class="asterisk">*</span></label>
+                    <input type="text">
+                </div>
+
+                <div id="regLevel" class="formItems">
+                    <label for="level">Nível<span class="asterisk">*</span></label>
+                    <input type="text">
+                </div>
+
+                <div id="regPolicy">
+                    <input type="checkbox" name="opcoes" value="agree" /> Li e concordo com a
+                    <a href="#" id="agreeStyle">Politica de privacidade</a>
+                </div>
+
+                <!-- <div id="rightButtons"> -->
+
+                <div id="submit" class="rightButtons">
+                    <button type="button">Submeter</button> <!-- review later type = submit-->
+                </div>
+
+                <div id="clean"  class="rightButtons">
+                    <button type="button">Apagar</button> <!-- review later type = reset-->
+                </div>
+                <!-- </div> -->
+
+            </div>
+            <!-- Fim do Menu Direito-->
+
+        </form>
 
     </div>
 </body>
