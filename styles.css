@@ -60,6 +60,11 @@ div#registration {                      /* Added to form background opacity */
     margin: 20px 0 20px 10px;
 }
 
+#regPolicy a{
+   
+    
+}
+
 .rightButtons {
     display: flex;
     justify-content: center;
