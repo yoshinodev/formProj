@@ -109,6 +109,7 @@ div#registration {                      /* Added to form background opacity */
 .torneItems { 
     display: flex;
     justify-content: space-evenly;
+    margin:10px 0px;                        /* added by Janeiro */
 }
 
 .leftButtons {
@@ -124,7 +125,9 @@ div#registration {                      /* Added to form background opacity */
 }
 
 .asterisk {
-    color: red;
+    color: red;                         /* added by Janeiro */
 }
 
-
+#agreeStyle {
+    color: #5cc0f0;;
+}
