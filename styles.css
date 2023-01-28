@@ -123,8 +123,8 @@ div#registration {                      /* Added to form background opacity */
     border-radius: 4px;
 }
 
-/*button {
-    
-    
-    
-} */
+.asterisk {
+    color: red;
+}
+
+
