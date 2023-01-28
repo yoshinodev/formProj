@@ -13,7 +13,7 @@ html {
     color: white;
     width: 100%;
     min-height: 100vh;
-    background-image: url("./images/hardware.jpg");  /* added 5 lines(moved from background image to here */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url("./images/hardware.jpg");  /* added 5 lines(moved from background image to here */
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -83,7 +83,7 @@ div#registration {                      /* Added to form background opacity */
     margin: 10px 0px;
     cursor: pointer;
     padding: 8px;
-    background-color: #5cc0f0;
+    background-color: #48afdf;
     color: white;
     border: none;
     border-radius: 4px;
@@ -129,5 +129,5 @@ div#registration {                      /* Added to form background opacity */
 }
 
 #agreeStyle {
-    color: #5cc0f0;                     /* added by Janeiro */
+    color: #48afdf;                     /* added by Janeiro */
 }
