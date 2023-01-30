@@ -26,18 +26,6 @@ html {
     background-attachment: fixed;
 }
 
-/*
-.backgroundImage {
-    background-image: url("./images/hardware.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 1.2; 
-    
-}
-*/
-
 .container {
     /* width: 100%;*/
     height: 100vh;
@@ -79,6 +67,35 @@ div#registration {
 label {
     width: 170px;
 }
+#divSelect {
+    position: relative;
+    /* display: inline-block;
+    width: 150px;
+    height: 30px; */
+    background: #48afdf;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;}
+
+select {
+    /* width: 150px; */
+    /* width: auto; */
+    background: inherit;
+    /* position: absolute;
+    top: -2px;
+    right: 10px;
+    width: 200px;
+    background: red; */
+}
+
+select:active {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    width: 200px;
+    background: red;
+}
+    
 
 .registValues {
     border: none;
@@ -88,27 +105,23 @@ label {
 
 }
 
-.custom-selector select {
+/* .custom-selector select {
 
     background: transparent;
     cursor: pointer;
-    /* padding: 0 2.5em 0 0;                Janeiro - padding: 0 2.5em 0 0; */
-    margin-left: 120px;                                  
-}
+    // padding: 0 2.5em 0 0;                Janeiro - padding: 0 2.5em 0 0;
+    margin-left: 170px;                                  
+} */
 
-.custom-selector:hover {
-    background-color: green;
-}
-
-.teste  {
+/* .teste  {
     /* position: absolute;
     top: -1px;
     left: -1px;
     right: -1px;
     bottom: -1px; */
-    /* background-color: red; */
+    /* background-color: red; 
     border-radius: inherit;
-  }
+  } */
 
 
 
@@ -139,6 +152,12 @@ label {
     border-radius: 4px;
 
 }
+.rightButtons:hover {
+    background-color: #48dadf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
 
 #torne {
     font-size: large;
@@ -160,11 +179,9 @@ label {
     display: flex;
     justify-content: space-evenly;
     margin: 10px 0px;
-    /* added by Janeiro */
 }
 
 .leftButtons {
-
     cursor: pointer;
     margin: 20px 10px;
     cursor: pointer;
@@ -175,14 +192,19 @@ label {
     border-radius: 4px;
 }
 
+.leftButtons:hover {
+    background-color: #48dadf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
 .asterisk {
     color: red;
-    /* added by Janeiro */
 }
 
 #agreeStyle {
     color: #48afdf;
-    /* added by Janeiro */
 }
 
 .cross {

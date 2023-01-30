@@ -20,23 +20,11 @@ html {
     width: 100%;
     min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("./images/hardware.jpg");
-    /* added 5 lines(moved from background image to here */
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-/*
-.backgroundImage {
-    background-image: url("./images/hardware.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 1.2; 
-    
-}
-*/
 
 .container {
     /* width: 100%;*/
@@ -50,7 +38,6 @@ html {
 }
 
 div#registration {
-    /* Added to form background opacity */
     border: 2px solid black;
     margin: 30px;
     background-color: rgba(0, 0, 0, 0.7);
