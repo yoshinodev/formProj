@@ -5,7 +5,7 @@ let phone = document.getElementById("phone");
 let bornDate = document.getElementById("bornDate");
 let newPassword = document.getElementById("newPassword");
 
-let passwordConfirmation = document.getElementById("passwordConfirmation");
+let pwdConfirm = document.getElementById("passwordConfirmation");
 
 let select = document.querySelector("select");
 let policy = document.getElementById("agreeStyle");
@@ -23,15 +23,15 @@ fullName.addEventListener('input', validateName);
 
 function validateName() {
 
-    let regexName = (/^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/);
+    let regexName = (/^([a-zA-Z]{1,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/); 
+            // it's acepting numbers after the first 2 words
     let nameValue = fullName.value;
-        
+    let crossName = document.getElementsByClassName("cross")[0];        
     if (!regexName.test(nameValue)) {
-        document.getElementById("crossName").style.display = "block";
+        crossName.style.display = "block"
     } 
     else {
-        // crossName.style.display = "none";     
-        document.getElementById("crossName").style.display = "none";
+        crossName.style.display = "none";             
     }
 }
 
@@ -41,12 +41,13 @@ email.addEventListener('input', validateEmail);
 function validateEmail() {
     let regexEmail = (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
     let emailValue = email.value; 
+    let crossEmail = document.getElementsByClassName("cross")[1];
     
     if(!regexEmail.test(emailValue)) {
-        document.getElementById("crossEmail").style.display = "block";
+        crossEmail.style.display = "block";
     }
     else {
-        document.getElementById("crossEmail").style.display = "none";
+        crossEmail.style.display = "none";
     }
 }
 
@@ -55,14 +56,60 @@ phone.addEventListener('input', validatePhone);
 function validatePhone() {
     let regexPhone = (/9[1236][0-9]{7}|2[1-9][0-9]{7}/);
     let phoneValue = phone.value;
+    let crossPhone = document.getElementsByClassName("cross")[2];
 
     if(!regexPhone.test(phoneValue)) {
-        document.getElementById("crossPhone").style.display = "block";
+        crossPhone.style.display = "block";
     }
     else {
-        document.getElementById("crossPhone").style.display = "none";
+        crossPhone.style.display = "none";
     }
 }
+
+bornDate.addEventListener("input", validateBornDate);
+
+function regexBornDate() {
+    let regexBornDate = (/9[1236][0-9]{7}|2[1-9][0-9]{7}/);
+    let bornDateValue = bornDate.value;
+    let crossBornDate = document.getElementsByClassName("cross")[3];
+
+    if (!regexBornDate.test(bornDateValue)) {
+        crossBornDate.style.display = "block";
+    }
+    else {
+        crossBornDate.style.display = "none";
+    }
+}
+
+newPassword.addEventListener("input", validateNewPassword);
+
+function regexNewPassword() {
+    let regexNewPassword = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%&])[0-9a-zA-Z#$%&]{6,10}$/);
+    let newPasswordValue = newPassword.value;
+    let crossNewPassword = document.getElementsByClassName("cross")[4];
+
+    if (!regexNewPassword.test(newPasswordValue)) {
+        crossNewPassword.style.display = "block";
+    }
+    else {
+        crossNewPassword.style.display = "none";
+    }
+} 
+
+function pwdConfirm() {
+    let pwdConfirm = pwdConfirm.value; 
+    let pwdConfValue = document.getElementsByClassName("cross")[5];
+    
+    if (!pwdConfirm.test(pwdConfValue)) {
+        crossPwdConfirm.style.display = "block";
+    }
+    else {
+        crossPwdConfirm.style.display = "none";
+    }
+} 
+
+
+
 
 // const regex = new RegExp(/^a...s$/);
 // console.log(regex.test('alias')); // true
@@ -82,6 +129,16 @@ function validatePhone() {
 //9[1236][0-9]{7}|2[1-9][0-9]{7}/
 
 
+
+
+//Password:
+// /^
+//   (?=.*\d)                   // must contein at least 1 digit
+//   (?=.*[a-z])                // must contein at least 1 lower case letter
+//   (?=.*[A-Z])                // must contein at least 1 upper case letter
+//   (?=.*[#$%&])               // must contein at least 1 special character
+//   [0-9a-zA-Z#$%&]{6,10}      // must contein a minimum of 6 and maximum of 10 special characters
+// $/
 
 
 
