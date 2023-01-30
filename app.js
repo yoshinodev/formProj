@@ -22,7 +22,6 @@ let levelOptions_Professional = document.getElementById("levelOptions_Profession
 fullName.addEventListener('input', validateName);
 
 function validateName() {
-
     let regexName = (/^([a-zA-Z]{1,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/); 
             // it's acepting numbers after the first 2 words
     let nameValue = fullName.value;
@@ -69,7 +68,7 @@ function validatePhone() {
 bornDate.addEventListener("input", validateBornDate);
 
 function regexBornDate() {
-    let regexBornDate = (/9[1236][0-9]{7}|2[1-9][0-9]{7}/);
+    let regexBornDate = (/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d{2}/);
     let bornDateValue = bornDate.value;
     let crossBornDate = document.getElementsByClassName("cross")[3];
 
@@ -139,13 +138,4 @@ function pwdConfirm() {
 //   (?=.*[#$%&])               // must contein at least 1 special character
 //   [0-9a-zA-Z#$%&]{6,10}      // must contein a minimum of 6 and maximum of 10 special characters
 // $/
-
-
-
-
-
-
-
-
-
 
