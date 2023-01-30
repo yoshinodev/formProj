@@ -52,22 +52,22 @@
                 <div id="regName" class="formItems">
                     <label class="labelFlexLeft" for="name">Nome completo<span class="asterisk">*</span></label>
                     <input id="name" class="registValues" type="text" name="name" required>
-                    <span id="crossName" class="cross">&#10060;</span>
-                    
+                    <span class="cross">&#10060;</span>
+
                     <!-- adicionar aos outros inputs -->
                 </div>
-                
+
                 <div id="regEmail" class="formItems">
                     <label for="email">Email<span class="asterisk">*</span></label>
-                    <input id="email" class="registValues" type="text" required> 
-                    <span id="crossEmail" class="cross">&#10060;</span>
+                    <input id="email" class="registValues" type="text" required>
+                    <span class="cross">&#10060;</span>
 
                 </div>
 
                 <div id="regPhone" class="formItems">
                     <label for="phone">Telefone</label>
                     <input id="phone" class="registValues" type="text">
-                    <span id="crossPhone" class="cross">&#10060;</span>
+                    <span class="cross">&#10060;</span>
                 </div>
 
                 <div id="regBornDate" class="formItems">
@@ -89,18 +89,23 @@
                 </div>
 
 
-                <div id="divSelect" class="formItems">
-                    <label class="custom-selector" for="level">Nível
-                        <select  id="levelOptions" class="registValues" name="levels">
-                            <option id="levelOptionsStarted" class="teste" value="iniciado">Iniciado</option>               <!-- review later to added as defaut -->
+                <div>
+                    <div id="divSelect" class="formItems">
+                        <label class="custom-selector" for="level">Nível</label>
+                    </div>
+
+                    <div>
+                        <select id="levelOptions" class="registValues" name="levels">
+                            <option id="levelOptionsStarted" class="teste" value="iniciado">Iniciado</option>   <!-- review later to added as defaut -->
                             <option id="levelOptionsIntermediate" class="teste" value="intermedio">Intermédio</option>
                             <option id="levelOptionsAdvanced" class="teste" value="avancado">Avançado</option>
                             <option id="levelOptionsPreProfessional" class="teste" value="preProfissional">Pré-Profissional</option>
-                            <option id="levelOptionsProfessional" class="teste" value="profissional">Profissional</option>
+                            <option id="levelOptionsProfessional" class="teste" value="profissional">Profissional
+                            </option>
                         </select>
-                    </label>
-                </div>
 
+                    </div>
+                </div>
                 <div id="regPolicy">
                     <input type="checkbox" name="opcoes" value="agree" /> Li e concordo com a
                     <a href="#" id="agreeStyle">Politica de privacidade</a>
@@ -124,9 +129,6 @@
         </form>
 
     </div>
-
-    <script src="./app.js"></script>
-
 </body>
 
 </html>
