@@ -9,6 +9,13 @@ let pwdConfirm = document.getElementById("passwordConfirmation");
 let checkPolicy = document.getElementById("checkPolicy");
 let select = document.querySelector("select");
 
+let subNameBool = false;
+let subEmailBool = false;
+let subPwdBool = false;
+let subPwdConfBool = false;
+let subPolicyBool = false;
+
+
 
 
 
@@ -28,9 +35,11 @@ function validateName() {
     let crossName = document.getElementsByClassName("cross")[0];        
     if (!regexName.test(nameValue)) {
         crossName.style.display = "inline";
+        subNameBool = false;
     } 
     else {
-        crossName.style.display = "none";             
+        crossName.style.display = "none";  
+        subNameBool = true;           
     }
 }
 
@@ -44,9 +53,11 @@ function validateEmail() {
     
     if(!regexEmail.test(emailValue)) {
         crossEmail.style.display = "inline";
+        subEmailBool = false;
     }
     else {
         crossEmail.style.display = "none";
+        subEmailBool = true;
     }
 }
 
@@ -89,9 +100,11 @@ function validateNewPassword() {
 
     if (!regexNewPassword.test(newPasswordValue)) {
         crossNewPassword.style.display = "inline";
+        subPwdBool = false;
     }
     else {
         crossNewPassword.style.display = "none";
+        subPwdBool = true;
     }
 } 
 
@@ -102,25 +115,39 @@ function validatePwdConfirm() {
     let crossPwdConf = document.getElementsByClassName("cross")[5];
     
     if (pwdConfirmValue !== newPassword.value) {
-        crossPwdConf.style.display = "inline";    
+        crossPwdConf.style.display = "inline";   
+        subPwdConfBool = false;
     }
     else {
         crossPwdConf.style.display = "none";
+        subPwdConfBool = true;
     }
 } 
 
-checkPolicy.addEventListener("click", myFunction); 
+checkPolicy.addEventListener("click", checkboxValidate); 
 
-function myFunction() {
+function checkboxValidate() {
     let checkBox = document.getElementById("checkPolicy");
     let crossPolicy = document.getElementsByClassName("cross")[6];
 
     if (checkBox.checked !== true){
         crossPolicy.style.display = "inline";
+        subPolicyBool = false;
     } else {
         crossPolicy.style.display = "none";
+        subPolicyBool = true;
     }
   }
+
+form.addEventListener('submit',)
+
+if (subNameBool && subEmailBool && subPwdBool && subPwdConfBool && subPolicyBool == true) {
+
+}
+
+ 
+
+
 // IF  THE ABOVE DOESN'T WORK, WE TRY THIS ONE:
 // function checkbocValidate(form) {
     
@@ -133,16 +160,9 @@ function myFunction() {
 // }
 
 
-
+// review later: explain alex the other way of submit button
 
 // Review later to add the cross on the checkbox policy
-
-
-
-
-
-
-
 
 
 // const regex = new RegExp(/^a...s$/);
