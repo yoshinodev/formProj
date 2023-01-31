@@ -15,9 +15,11 @@
 
 <body>
 
+<!-- ==================== Main container div =================== -->
 
     <div class="container">
-        <!-- left menu -->
+
+    <!-- ============== Left "menu" Start ================= -->
         <div class="identification">
 
             <div id="iconL1" class="torneItems">
@@ -35,92 +37,111 @@
 
             </div>
         </div>
-        <!-- Fim do Menu esquerdo-->
+         <!-- ============== End of left "menu" ================= -->
 
-
-
-        <!-- Menu Direito-->
+        <!-- =========================== Right "Menu" ================================= -->
+            <!-- ================= Registration Form Start ====================== -->
 
         <form action="app.js" type="post">
 
             <div id="registration">
+               
                 <div id="title">
                     <i class="fa-solid fa-pencil"></i>
                     <h2>INSCREVA-SE AQUI</h2>
                 </div>
+
+            <!-- ====================== Form Items START ====================== -->
+
+                <!-- =============== Name Field Region ================ -->
+
                 <div id="regName" class="formItems">
                     <label class="labelFlexLeft" for="name">Nome completo<span class="asterisk">*</span></label>
-                    <input id="name" class="registValues" type="text" name="name" required>
+                    <input id="name" class="registValues" type="text" name="name" placeholder="Nome completo *" required>
                     <span class="cross">&#10060;</span>
-                    
-                    <!-- adicionar aos outros inputs -->
+                    <!-- adicionar aos outros inputs             ****** ALEX ??? TA RESOLVIDO? @yoshinodev ******************************** -->
                 </div>
-                
+
+                <!-- ================ Email Field Region ====================== -->
+
                 <div id="regEmail" class="formItems">
                     <label for="email">Email<span class="asterisk">*</span></label>
-                    <input id="email" class="registValues" type="text" required> 
+                    <input id="email" class="registValues" type="text"placeholder="Email *" required> 
                     <span class="cross">&#10060;</span>
-
                 </div>
+
+                <!-- ================ Phone Field Region ======================= -->
 
                 <div id="regPhone" class="formItems">
                     <label for="phone">Telefone</label>
-                    <input id="phone" class="registValues" type="text">
+                    <input id="phone" class="registValues" type="text" placeholder="Telefone" 
+                        aria-labelledby="phone-number" aria-placeholder="minimum 9 digits">
                     <span class="cross">&#10060;</span>
                 </div>
+                
+                <!-- ================ Date of Birth Field ======================= -->
 
                 <div id="regBornDate" class="formItems">
                     <label for="bornDate">Data de nascimento</label>
-                    <input id="bornDate" class="registValues" type="text">
+                    <input id="bornDate" class="registValues" type="text" placeholder="Data nascimento" 
+                        aria-labelledby="date-of-birth" aria-placeholder="DD-MM-YYYY">
                     <span class="cross">&#10060;</span>
                 </div>
 
+                <!-- ================= Password Field Region ======================= -->
+
                 <div id="regPassNew" class="formItems">
-                    <label for="newPassword">Senha<span class="asterisk">*</span></label>
-                    <input id="newPassword" class="registValues" type="text" required>
+                    <label for="Password">Senha<span class="asterisk">*</span></label>
+                    <input id="newPassword" class="registValues" type="text" placeholder="Senha *" 
+                        aria-label="password" aria-describedby=”password-hint” required>
                     <span class="cross">&#10060;</span>
                 </div>
+
+                <!-- ================ Password Confirmation Field Region ================ -->
 
                 <div id="regPassConfirmation" class="formItems">
                     <label for="passwordConfirmation">Senha de novo<span class="asterisk">*</span></label>
-                    <input id="passwordConfirmation" class="registValues" type="text" required>
+                    <input id="passwordConfirmation" class="registValues" 
+                        type="text" placeholder="Senha de novo *" aria-describedby=”repeat-previous-password” required>
                     <span class="cross">&#10060;</span>
                 </div>
 
+                <!-- ================ Level Select Options Region ===================== -->
 
                 <div id="divSelect" class="formItems">
                     <label class="custom-selector" for="level">Nível</label>
                         <select  id="levelOptions" class="registValues" name="levels">
-                            <option id="levelOptionsStarted" class="teste" value="iniciado">Iniciado</option>               <!-- review later to added as defaut -->
+                            <!-- review later to added as defaut -->
+                            <option id="levelOptionsStarted" class="teste" value="iniciado">Iniciado</option>
                             <option id="levelOptionsIntermediate" class="teste" value="intermedio">Intermédio</option>
                             <option id="levelOptionsAdvanced" class="teste" value="avancado">Avançado</option>
                             <option id="levelOptionsPreProfessional" class="teste" value="preProfissional">Pré-Profissional</option>
                             <option id="levelOptionsProfessional" class="teste" value="profissional">Profissional</option>
                         </select>
                 </div>
+                
+                <!-- ================ Privacy Policy Region ===================== -->
 
                 <div id="regPolicy">
-                    <input id="checkPolicy" type="checkbox" name="opcoes" value="agree" /> Li e concordo com a
-                    <a href="#" id="agreeStyle">Politica de privacidade</a>
+                    <input id="checkPolicy" type="checkbox" name="options" value="agree" aria-label="Privacy policy checkbox"/>
+                    Li e concordo com a <a href="#" id="agreeStyle">Politica de privacidade</a>
                     <span class="cross">&#10060;</span>
                 </div>
 
-                <!-- <div id="rightButtons"> -->
+                <!-- ================ Submit and Clean Buttons Region ===================== -->
 
                 <div id="submit">
-                    <button type="submit" class="rightButtons">Submeter</button> <!-- review later type = submit-->
+                    <button type="submit" class="rightButtons" aria-placeholder="">Submeter</button> <!-- review later type = submit-->
                 </div>
 
                 <div id="clean">
                     <button type="reset" class="rightButtons">Apagar</button> <!-- review later type = reset-->
                 </div>
-                <!-- </div> -->
-
+            <!-- ================ Right "menu" End ===================== -->
             </div>
-            <!-- Fim do Menu Direito-->
 
         </form>
-
+    <!-- ============================ END of MAIN CONTAINER Region ================================= -->
     </div>
 
     <script src="./app.js"></script>
