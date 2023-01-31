@@ -39,10 +39,9 @@ function validateName() {
     } 
     else {
         crossName.style.display = "none";  
-        subNameBool = true;           
+        return subNameBool; 
     }
 }
-
 
 email.addEventListener('input', validateEmail);
 
@@ -58,6 +57,7 @@ function validateEmail() {
     else {
         crossEmail.style.display = "none";
         subEmailBool = true;
+        return emailValue, subEmailBool;
     }
 }
 
@@ -105,6 +105,7 @@ function validateNewPassword() {
     else {
         crossNewPassword.style.display = "none";
         subPwdBool = true;
+        return newPasswordValue, subPwdBool;
     }
 } 
 
@@ -121,6 +122,7 @@ function validatePwdConfirm() {
     else {
         crossPwdConf.style.display = "none";
         subPwdConfBool = true;
+        return pwdConfirmValue, subPwdConfBool;
     }
 } 
 
@@ -136,15 +138,26 @@ function checkboxValidate() {
     } else {
         crossPolicy.style.display = "none";
         subPolicyBool = true;
+        return subPolicyBool;
     }
   }
+// console.log(subNameBool,subEmailBool,subPwdBool, subPwdConfBool,subPolicyBool);
+    form.addEventListener('submit', function (e) {
+        // prevent the form from submitting
+        e.preventDefault();
+        
+        // validateName() === true;
+        // validateEmail(subEmailBool);
+        // validateNewPassword(subPwdBool);
+        // validatePwdConfirm(subPwdConfBool);
+        // checkboxValidate(subPolicyBool);
 
-form.addEventListener('submit',)
-
-if (subNameBool && subEmailBool && subPwdBool && subPwdConfBool && subPolicyBool == true) {
-
-}
-
+        // if () {
+           if(subNameBool && subEmailBool && subPwdBool && subPwdConfBool && subPolicyBool === true)
+            { alert("Form submitted successfully");
+            }
+            else {alert("esta perdido");}
+    });
  
 
 
