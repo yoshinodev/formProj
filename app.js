@@ -35,7 +35,6 @@ function validateName() {
     let crossName = document.getElementsByClassName("cross")[0];
     if (!regexName.test(nameValue)) {
         crossName.style.display = "inline";
-        subNameBool = false;
         return false;
     }
     else {
@@ -177,6 +176,7 @@ function resetFunction () {
     let reset = document.getElementById("resetBtn").reset();
     return reset;
 }
+
 
 // IF  THE ABOVE DOESN'T WORK, WE TRY THIS ONE:
 // function checkbocValidate(form) {
