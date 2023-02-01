@@ -191,12 +191,25 @@ option {
 #msgUserError {
     display: flexbox;
     flex-wrap: wrap;
-    width: 330px;
+    width: 356px;
     /* box-sizing: border-box; */
     border: 2px solid white;
     color: red;
     margin: 20px 0px;
-    font-size: 14px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 20px;
+    /* display: none; */
 }
 
+#messagValidation {
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 356px;
+    /* box-sizing: border-box; */
+    border: 2px solid white;
+    color:lawngreen;
+    margin: 20px 0px;
+    font-size: 16px;
+    padding: 20px;
+    /* display: none; */
+}
