@@ -37,6 +37,9 @@ html {
 }
 
 div#registration {
+    display: flex;
+    flex-direction: column;
+
     border: 2px solid black;
     margin: 30px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -66,48 +69,44 @@ label {
     width: 170px;
 }
 #divSelect {
-    position: relative;
+    /* position: relative; */
     /* display: inline-block;
-    width: 150px;
-    height: 30px; */
-    background: #48afdf;
-    border-radius: 4px;
+    width: 150px; */
+    /* height: 30px;  */
+    /* border-radius: 4px; */
     overflow: hidden;
-    cursor: pointer;}
+    cursor: pointer;
+}
 
 select {
     /* width: 150px; */
     /* width: auto; */
-    background: inherit;
+    
     /* position: absolute;
     top: -2px;
     right: 10px;
     width: 200px;
     background: red; */
+    /* display: inline-flex; */
+    width: 150px;
 }
 
-select:active {
-    position: absolute;
-    top: -5px;
-    right: 10px;
-    width: 200px;
-    background: red;
+option {
+    background-color:rgba(0, 0, 0, 0.7);
 }
-    
 
 .registValues {
     border: none;
     border-bottom: 1px solid white;
     background-color: transparent;
     color: white;
-
 }
 
 #regPolicy {
     margin: 10px 10px 10px 10px;
 }
 
-#regPolicy a:hover {
+#regPolicy a {
     color: #48afdf;
 }
 
@@ -189,5 +188,15 @@ select:active {
     display: none;
 }
 
-
+#msgUserError {
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 330px;
+    /* box-sizing: border-box; */
+    border: 2px solid white;
+    color: red;
+    margin: 20px 0px;
+    font-size: 14px;
+    padding: 10px;
+}
 
