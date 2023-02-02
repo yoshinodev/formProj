@@ -4,33 +4,26 @@ let email = document.getElementById("email");
 let phone = document.getElementById("phone");
 let bornDate = document.getElementById("bornDate");
 let newPassword = document.getElementById("newPassword");
-
 let pwdConfirm = document.getElementById("passwordConfirmation");
-let checkPolicy = document.getElementById("checkPolicy");
-let select = document.querySelector("select");
+let submitedMessage = document.getElementById("messagValidation");
 
-let subNameBool = false;
-let subEmailBool = false;
-let subPwdBool = false;
-let subPwdConfBool = false;
-let subPolicyBool = false;
-
-
-
-
-
-/*let levelOptions_Started = document.getElementById("levelOptions_Started");
-let levelOptions_Intermediate = document.getElementById("levelOptions_Intermediate");
-let levelOptions_Advanced = document.getElementById("levelOptions_Advanced");
-let levelOptions_PreProfessional = document.getElementById("levelOptions_PreProfessional");
-let levelOptions_Professional = document.getElementById("levelOptions_Professional"); */
-
+function isRequired(value) {
+    if (value === '') {
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 
 fullName.addEventListener('input', validateName);
 
+/* function to check iff the name is valid: it's considered valid
+ if it has at least 2 alphabetical words with 2 letters each*/
+
 function validateName() {
+    isRequired = true;
     let regexName = (/^([a-zA-Z]{1,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{1,}\s?([a-zA-Z]{1,})?)/);
-            // it's acepting numbers after the first 2 words
     let nameValue = fullName.value;
     let crossName = document.getElementsByClassName("cross")[0];
     if (!regexName.test(nameValue)) {
@@ -45,33 +38,41 @@ function validateName() {
 
 email.addEventListener('input', validateEmail);
 
+// function to check if the email is valid using a regex for email format
+
 function validateEmail() {
-    let regexEmail = (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+    isRequired = true;
+    let regexEmail = (/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
     let emailValue = email.value;
     let crossEmail = document.getElementsByClassName("cross")[1];
 
     if(!regexEmail.test(emailValue)) {
         crossEmail.style.display = "inline";
-        subEmailBool = false;
         return false;
     }
     else {
         crossEmail.style.display = "none";
-        subEmailBool = true;
-        // return emailValue, subEmailBool;
         return true;
     }
 }
 
 phone.addEventListener('input', validatePhone);
 
+/* function to check if the phone number is valid using a regex for phone format
+    It's considered valid if it has only digits and min 9 digits or 12 with a plus in the beginning */
+
 function validatePhone() {
+    isRequired = false;
     let regexPhone = (/^\+?[0-9]{9}([0-9]{3})?$/);
     let phoneValue = phone.value;
     let crossPhone = document.getElementsByClassName("cross")[2];
 
-    if(!regexPhone.test(phoneValue)) {
+    if (phoneValue === '') {
+        crossPhone.style.display = "none";
+    }
+    else if(!regexPhone.test(phoneValue)) {
         crossPhone.style.display = "inline";
+        return false;
     }
     else {
         crossPhone.style.display = "none";
@@ -81,12 +82,21 @@ function validatePhone() {
 
 bornDate.addEventListener("input", validateBornDate);
 
+// function to check if the date is valid using a regex for date format
+
 function validateBornDate() {
-    let regexBornDate = (/^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/);
+    isRequired = false;
+    /* regex for date format dd/mm/yyyy only accepts digits, / and 4 digits for the year
+    It also checks if it's a leap year for february and months with 30 and 31 days */
+    let regexBornDate = (/^(?=\d{2}(\/)\d{2}\1\d{4}$)(?:0[1-9]|1\d|[2][0-8]|29(?!.02.(?!(?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)\d{2}(?:[02468][048]|[13579][26])))|30(?!.02)|31(?=.(?:0[13578]|10|12))).(?:0[1-9]|1[012]).\d{4}$/);
     let bornDateValue = bornDate.value;
     let crossBornDate = document.getElementsByClassName("cross")[3];
 
-    if (!regexBornDate.test(bornDateValue)) {
+    //if the input is empty, the cross is not displayed because the field is not required
+    if (bornDateValue === '') {
+        crossBornDate.style.display = "none";
+    }
+    else if (!regexBornDate.test(bornDateValue)) {
         crossBornDate.style.display = "inline";
         return false;
     }
@@ -98,124 +108,105 @@ function validateBornDate() {
 
 newPassword.addEventListener("input", validateNewPassword);
 
+// function to check if the password is valid using a regex for password format
+
 function validateNewPassword() {
+    isRequired = true;
+    /* regex for password with at least 6 characters, 1 uppercase, 1 lowercase,
+     1 number and 1 special character from the list given */
     let regexNewPassword = (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%&])[0-9a-zA-Z#$%&]{6,10}$/);
+    /* ^                        // start passwordRegex
+      (?=.*\d)                   // must contain at least 1 digit
+      (?=.*[a-z])                // must contain at least 1 lower case letter
+      (?=.*[A-Z])                // must contain at least 1 upper case letter
+      (?=.*[#$%&])               // must contain at least 1 special character
+      [0-9a-zA-Z#$%&]{6,10}      // must contain a minimum of 6 and maximum of 10 special characters
+    */
     let newPasswordValue = newPassword.value;
     let crossNewPassword = document.getElementsByClassName("cross")[4];
 
     if (!regexNewPassword.test(newPasswordValue)) {
         crossNewPassword.style.display = "inline";
-        subPwdBool = false;
         return false;
     }
     else {
         crossNewPassword.style.display = "none";
-        subPwdBool = true;
-        // return newPasswordValue, subPwdBool;
         return true;
     }
 }
 
 pwdConfirm.addEventListener("input", validatePwdConfirm);
 
+// function to check if the password confirmation is valid
+
 function validatePwdConfirm() {
+    isRequired = true;
     let pwdConfirmValue = pwdConfirm.value;
     let crossPwdConf = document.getElementsByClassName("cross")[5];
 
     if (pwdConfirmValue !== newPassword.value) {
         crossPwdConf.style.display = "inline";
-        subPwdConfBool = false;
         return false;
     }
     else {
         crossPwdConf.style.display = "none";
-        subPwdConfBool = true;
-        // return pwdConfirmValue, subPwdConfBool;
         return true;
     }
 }
 
+let checkPolicy = document.getElementById("checkPolicy");
 checkPolicy.addEventListener("click", checkboxValidate);
 
+// function to check if the checkbox is checked and therefore valid
+
 function checkboxValidate() {
+    isRequired = true;
     let checkBox = document.getElementById("checkPolicy");
     let crossPolicy = document.getElementsByClassName("cross")[6];
 
     if (checkBox.checked !== true){
         crossPolicy.style.display = "inline";
-        subPolicyBool = false;
+        return false;
     } else {
         crossPolicy.style.display = "none";
-        subPolicyBool = true;
-        return subPolicyBool;
+        return true;
     }
   }
-// console.log(subNameBool,subEmailBool,subPwdBool, subPwdConfBool,subPolicyBool);
+
+// function to check if all the required input validations are true
+function validateMaster() {
+ if (
+    validateName() === true &&
+    validateEmail() === true &&
+    validateNewPassword() === true &&
+    validatePwdConfirm() === true &&
+    checkboxValidate() === true
+ ) 
+ {
+    return true;
+ }
+ else {
+    return false;
+ }
+}
+
+/* function to check if all the input validations are true
+    if that's the case, form's hidden and a new message appears */
+
     form.addEventListener('submit', function (e) {
         // prevent the form from submitting
         e.preventDefault();
-
-        // validateName() === true;
-        // validateEmail(subEmailBool);
-        // validateNewPassword(subPwdBool);
-        // validatePwdConfirm(subPwdConfBool);
-        // checkboxValidate(subPolicyBool);
-
-        if(validateName() === true && validateEmail() === true && validateNewPassword() === true && validatePwdConfirm() === true && checkboxValidate() === true) {
-            alert("Form submitted successfully");
+        if (validateMaster() === true) {
+            form.style.display = "none";
+            submitedMessage.style.display = "block";
         }
-        //    if(subNameBool && subEmailBool && subPwdBool && subPwdConfBool && subPolicyBool === true)
-        //     { alert("Form submitted successfully");
-        //     }
-        //     else {alert("esta perdido");}
     });
 
 form.addEventListener('reset', resetFunction);
+
+// function to reset the form
 
 function resetFunction () {
     let reset = document.getElementById("resetBtn").reset();
     return reset;
 }
-
-
-// IF  THE ABOVE DOESN'T WORK, WE TRY THIS ONE:
-// function checkbocValidate(form) {
-
-//     if(form.checkboxfield.checked) {
-//         crossPolicy.style.display = "inline";
-//     }
-//     else {
-//         crossPolicy.style.display = "none";
-//     }
-// }
-
-
-// review later: explain alex the other way of submit button
-
-// Review later to add the cross on the checkbox policy
-
-
-// const regex = new RegExp(/^a...s$/);
-// console.log(regex.test('alias')); // true
-
-// crossName
-// ^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)
-
-// email
-// /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test('iefp@sapo.com')
-
-// Telefone
-// /9[1236][0-9]{7}|2[1-9][0-9]{7}/.test('2463456789')
-
-//telemovel
-//9[1236][0-9]{7}|2[1-9][0-9]{7}/
-
-//Password:
-// /^
-//   (?=.*\d)                   // must contein at least 1 digit
-//   (?=.*[a-z])                // must contein at least 1 lower case letter
-//   (?=.*[A-Z])                // must contein at least 1 upper case letter
-//   (?=.*[#$%&])               // must contein at least 1 special character
-//   [0-9a-zA-Z#$%&]{6,10}      // must contein a minimum of 6 and maximum of 10 special characters
-// $/
-

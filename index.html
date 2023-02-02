@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
             </div>
 
             <div>
-                <h2 id="torne" class="torneItems">TORNEIO DA PRIMAVERA</h2>
+                <h2 id="torneTitle" class="torneItems">TORNEIO DA PRIMAVERA</h2>
                 <p id="award" class="torneItems">Prémios até ao 10º lugar</p>
 
                 <div class="leftButtonsDiv torneItems">
@@ -42,13 +42,11 @@
         <!-- =========================== Right "Menu" ================================= -->
         <!-- ================= Registration Form Start ====================== -->
 
-
-
         <div id="registration">
 
             <div id="title">
-                <i class="fa-solid fa-pencil"></i>
-                <h2>INSCREVA-SE AQUI</h2>
+                
+                <h2><i class="fa-solid fa-pencil"></i>INSCREVA-SE AQUI</h2>
                 
             </div>
             <p id="msgUserError"><strong>Não foi possivel concluir a inscrição. Utilizador já registado!</strong></p>
@@ -56,12 +54,12 @@
             <!-- ====================== Form Items START ====================== -->
 
             <!-- =============== Name Field Region ================ -->
-            <form action="app.js" type="post">
+            <form action="app.js" method="post" novalidate>
 
                 <div id="regName" class="formItems">
                     <label for="name">Nome completo<span class="asterisk">*</span></label>
                     <input id="name" class="registValues" type="text" name="name" placeholder="Nome completo *"
-                        autocomplete="off" required>
+                        autocomplete="off">
                     <span class="cross">&#10060;</span>
 
                 </div>
@@ -70,8 +68,7 @@
 
                 <div id="regEmail" class="formItems">
                     <label for="email">Email<span class="asterisk">*</span></label>
-                    <input id="email" class="registValues" type="text" placeholder="Email *" autocomplete="off"
-                        required>
+                    <input id="email" class="registValues" type="text" placeholder="Email *" autocomplete="off">
                     <span class="cross">&#10060;</span>
                 </div>
 
@@ -96,9 +93,9 @@
                 <!-- ================= Password Field Region ======================= -->
 
                 <div id="regPassNew" class="formItems">
-                    <label for="Password">Senha<span class="asterisk">*</span></label>
+                    <label for="newPassword">Senha<span class="asterisk">*</span></label>
                     <input id="newPassword" class="registValues" type="text" placeholder="Senha *" aria-label="password"
-                        aria-describedby=”password-hint” autocomplete="off" required>
+                        aria-describedby=”password-hint” autocomplete="off">
                     <span class="cross">&#10060;</span>
                 </div>
 
@@ -107,22 +104,21 @@
                 <div id="regPassConfirmation" class="formItems">
                     <label for="passwordConfirmation">Senha de novo<span class="asterisk">*</span></label>
                     <input id="passwordConfirmation" class="registValues" type="text" placeholder="Senha de novo *"
-                        aria-describedby=”repeat-previous-password” autocomplete="off" required>
+                        aria-describedby=”repeat-previous-password” autocomplete="off">
                     <span class="cross">&#10060;</span>
                 </div>
 
                 <!-- ================ Level Select Options Region ===================== -->
 
                 <div id="divSelect" class="formItems">
-                    <label class="custom-selector" for="level">Nível</label>
-                    <select id="levelOptions" class="registValues" name="levels">
+                    <label class="custom-selector" for="levels">Nível</label>
+                    <select id="levels" class="registValues" name="levels">
                         <!-- review later to added as defaut -->
-                        <option id="levelOptionsStarted" class="teste" value="iniciado">Iniciado</option>
-                        <option id="levelOptionsIntermediate" class="teste" value="intermedio">Intermédio</option>
-                        <option id="levelOptionsAdvanced" class="teste" value="avancado">Avançado</option>
-                        <option id="levelOptionsPreProfessional" class="teste" value="preProfissional">Pré-Profissional
-                        </option>
-                        <option id="levelOptionsProfessional" class="teste" value="profissional">Profissional</option>
+                        <option value="iniciado">Iniciado</option>
+                        <option value="intermedio">Intermédio</option>
+                        <option value="avancado">Avançado</option>
+                        <option value="preProfissional">Pré-Profissional</option>
+                        <option value="profissional">Profissional</option>
                     </select>
                 </div>
 
@@ -138,7 +134,7 @@
                 <!-- ================ Submit and Clean Buttons Region ===================== -->
 
                 <div id="submit">
-                    <button type="submit" class="rightButtons" aria-placeholder="">Submeter</button>
+                    <button type="submit" class="rightButtons">Submeter</button>
                     <!-- review later type = submit-->
                 </div>
 
@@ -148,17 +144,12 @@
                 <!-- ================ Right "menu" End ===================== -->
             </form>
 
-            
             <p id="messagValidation"><strong>Inscrição realizada com sucesso</strong></p>
 
         </div>
 
-
         <!-- ============================ END of MAIN CONTAINER Region ================================= -->
 
-
-
-    </div>
     </div>
 
     <script src="./app.js"></script>

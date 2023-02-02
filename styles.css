@@ -1,12 +1,10 @@
-/* =============== General =============== */
+/* ======================== General ===================== */
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
 }
-
 
 *::before, *::after {
   box-sizing: border-box;
@@ -26,7 +24,6 @@ html {
 }
 
 .container {
-    /* width: 100%;*/
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -36,10 +33,38 @@ html {
     align-content: center;
 }
 
+#msgUserError {
+    display: flex;
+    flex-wrap: wrap;
+    width: 356px;
+    /* box-sizing: border-box; */
+    border: 2px solid white;
+    color: red;
+    margin: 20px 0px;
+    font-size: 16px;
+    padding: 20px;
+    display: none;
+}
+
+#messagValidation {
+    display: flex;
+    flex-wrap: wrap;
+    width: 356px;
+    /* box-sizing: border-box; */
+    border: 2px solid white;
+    color:lawngreen;
+    margin: 20px 0px;
+    font-size: 16px;
+    padding: 20px;
+    display: none;
+}
+
+/* ======================== Right Side Form ===================== */
+
 div#registration {
     display: flex;
     flex-direction: column;
-
+    margin: 0px 30px 20px 30px;
     border: 2px solid black;
     margin: 30px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -61,38 +86,15 @@ div#registration {
 
 .formItems {
     display: flex;
-    /* justify-content: space-between;                  Review later with flex(end) or not  */
     margin: 10px;
 }
 
 label {
     width: 170px;
 }
-#divSelect {
-    /* position: relative; */
-    /* display: inline-block;
-    width: 150px; */
-    /* height: 30px;  */
-    /* border-radius: 4px; */
-    overflow: hidden;
-    cursor: pointer;
-}
 
-select {
-    /* width: 150px; */
-    /* width: auto; */
-    
-    /* position: absolute;
-    top: -2px;
-    right: 10px;
-    width: 200px;
-    background: red; */
-    /* display: inline-flex; */
-    width: 150px;
-}
-
-option {
-    background-color:rgba(0, 0, 0, 0.7);
+input::placeholder {
+    color: transparent;
 }
 
 .registValues {
@@ -101,18 +103,39 @@ option {
     background-color: transparent;
     color: white;
 }
+.cross {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    width: 10px;
+    display: none;
+}
+
+#divSelect {
+    overflow: hidden;
+    cursor: pointer;
+}
+select {
+    width: 150px;
+}
+
+option {
+    background-color:rgba(0, 0, 0, 0.7);
+}
 
 #regPolicy {
     margin: 10px 10px 10px 10px;
 }
 
-#regPolicy a {
+#agreeStyle {
     color: #48afdf;
 }
 
+.asterisk {
+    color: red;
+}
+
 .rightButtons {
-    /* display: flex;
-    justify-content: center; */
     width: 100%;
     margin: 10px 0px;
     cursor: pointer;
@@ -130,7 +153,9 @@ option {
     border-radius: 4px;
 }
 
-#torne {
+/* ======================== Left Side Contest Info ===================== */
+
+#torneTitle {
     font-size: large;
 }
 
@@ -140,6 +165,8 @@ option {
     font-size: xxx-large;
 }
 
+/* ==== div of left Contest === */
+
 .identification {
     display: flex;
     /* flex-wrap: wrap; 
@@ -148,6 +175,7 @@ option {
     align-self: center;
 }
 
+/* ===== class for contest items ==== */
 .torneItems {
     display: flex;
     justify-content: space-evenly;
@@ -172,44 +200,150 @@ option {
     border-radius: 4px;
 }
 
-.asterisk {
-    color: red;
+@media (min-width:568px) and (max-width:767px) {
+    
+        .container {
+            flex-direction: row;
+        }
+    
+        div#registration {
+            margin: 0px;
+            width: 300px;
+        }
+    
+        /* this is the div of right title */
+        #title {
+            display: inline-flex;
+            margin-bottom: 10px;
+        }
+    
+        .fa-pencil {
+            margin-right: 10px;
+            font-size: small;
+            align-self: center;
+        }
+    
+        #title h2 {
+            font-size: medium;
+        }
+    
+        label {
+            display: none;
+        }
+    
+        input::placeholder {
+            color: white;
+        }
+    
+        .registValues {
+            width: -webkit-fill-available;
+        }
+    
+        #regPolicy {
+            margin: 20px 0px;
+            font-size: small;
+        }
+    
+        .identification {
+            display: flex;
+            align-self: center;
+        }
+    
+        #torneTitle {
+            font-size: medium;
+        }
+    
+        .torneItems {
+            margin: 10px;
+        }
+    
+        .leftButtonsDiv {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .leftButtons {
+            margin: 0px;
+            display: flex;
+            padding: 5px 14px;
+        }
 }
 
-#agreeStyle {
-    color: #48afdf;
+@media (max-width: 568px) {
+    
+        .container {
+            flex-direction: column;
+        }
+    
+        div#registration {
+            margin: 0px;
+            width: 300px;
+        }
+    
+        /* this is the div of right title */
+        #title {
+            display: inline-flex;
+            margin-bottom: 10px;
+        }
+    
+        .fa-pencil {
+            margin-right: 10px;
+            font-size: small;
+            align-self: center;
+        }
+    
+        #title h2 {
+            font-size: medium;
+        }
+    
+        label {
+            display: none;
+        }
+    
+        input::placeholder {
+            color: white;
+        }
+    
+        .registValues {
+            width: -webkit-fill-available;
+        }
+    
+        #regPolicy {
+            margin: 20px 0px;
+            font-size: small;
+        }
+    
+        .identification {
+            display: flex;
+            align-self: center;
+        }
+    
+        #torneTitle {
+            font-size: medium;
+        }
+
+        .fa-table-tennis-paddle-ball {
+            font-size: xx-large;
+        }
+    
+        .torneItems {
+            margin: 10px;
+        }
+    
+        .leftButtonsDiv {
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .leftButtons {
+            margin: 0px;
+            display: flex;
+            padding: 5px 14px;
+        }
 }
 
-.cross {
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    width: 10px;
-    display: none;
-}
 
-#msgUserError {
-    display: flexbox;
-    flex-wrap: wrap;
-    width: 356px;
-    /* box-sizing: border-box; */
-    border: 2px solid white;
-    color: red;
-    margin: 20px 0px;
-    font-size: 16px;
-    padding: 20px;
-    display: none;
-}
 
-#messagValidation {
-    display: flexbox;
-    flex-wrap: wrap;
-    width: 356px;
-    /* box-sizing: border-box; */
-    border: 2px solid white;
-    color:lawngreen;
-    margin: 20px 0px;
-    font-size: 16px;
-    padding: 20px;
-    display: none;
-}
+
+
+
