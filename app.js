@@ -89,6 +89,46 @@ function validateBornDate() {
     /* regex for date format dd/mm/yyyy only accepts digits, / and 4 digits for the year
     It also checks if it's a leap year for february and months with 30 and 31 days */
     let regexBornDate = (/^(?=\d{2}(\/)\d{2}\1\d{4}$)(?:0[1-9]|1\d|[2][0-8]|29(?!.02.(?!(?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)\d{2}(?:[02468][048]|[13579][26])))|30(?!.02)|31(?=.(?:0[13578]|10|12))).(?:0[1-9]|1[012]).\d{4}$/);
+ /*   
+    ^    # start anchor
+
+--> precheck xx-xx-xxxx, separated by /
+(?=\d{2}(\/)\d{2}\1\d{4}$)
+
+(?:  --> day-check: "non caturing group"
+
+  --> days 01-28
+  0[1-9]|1\d|[2][0-8]| 
+
+  --> february day 29 check for leap year: all 4y / 00 years: only each 400 (is leap year if multiple of 400
+  --> 0400,0800,1200,1600,2000,...
+  29
+  (?!.02. --> if not february
+    (?!
+      --> 00 years: exclude !0 %400 years
+      (?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)
+
+      ..> 00,04,08,12,... 
+      \d{2}(?:[02468][048]|[13579][26])
+    )
+  )|
+
+  --> if it has 30 days, cannot be feb, february cannot have 30 days
+  30(?!.02)|
+
+  --> months with 31 days
+  31(?=.(?:0[13578]|10|12))
+
+) --> end of day-check
+
+--> months 01-12
+.(?:0[1-9]|1[012])
+
+--> years between 0000-9999
+.\d{4}
+
+$ --> end anchor */
+    
     let bornDateValue = bornDate.value;
     let crossBornDate = document.getElementsByClassName("cross")[3];
 
